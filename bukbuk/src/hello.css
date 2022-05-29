@@ -1,0 +1,18 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+main{
+    background-color: black;
+}
+.signUp{
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+}
+.signUpInput{
+    background-color: bisque;
+    width: 25%;
+    height: 25%;
+}
