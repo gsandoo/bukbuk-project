@@ -1,4 +1,3 @@
-import LogIn from "./components/LogIn";
 import './App.css';
 import './hello.css';
 

@@ -124,7 +124,8 @@ const handleButtonValid = () => {
           </button>
         </div>
     </main>
-    )}
+    )
+  }
 
 
 export default LogIn;
