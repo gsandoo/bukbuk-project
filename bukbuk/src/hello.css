@@ -16,11 +16,15 @@ main{
 }
 .nameInput{
    height: 7vh; 
+   margin-bottom: 2vh;
 }
 .inputMessage{
     background-color: azure;
     height: 5vh;
-
+    padding-top: 1vh;
+}
+.input{
+   height: 4vh; 
 }
 .nameInput .inputMessage input{
  height: 5vh;       

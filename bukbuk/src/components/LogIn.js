@@ -55,6 +55,7 @@ const handleButtonValid = () => {
             <div className="nameInput">
               <div className="inputMessage">Name *</div>
               <input
+                className='input'
                 name="userName"
                 onChange={handleInput}
               />
@@ -62,6 +63,7 @@ const handleButtonValid = () => {
             <div className="emailInput">
               <div className="inputMessage">Email(ID) *</div>
               <input
+              className='input'
                 name="email"
                 onChange={handleInput}
               />
@@ -69,6 +71,7 @@ const handleButtonValid = () => {
             <div className="passwordInput">
               <div className="inputMessage">Password *</div>
               <input
+              className='input'
                 type="password"
                 name="password"
                 onChange={handleInput}
@@ -77,6 +80,7 @@ const handleButtonValid = () => {
             <div className="phoneNumberInput">
               <div className="inputMessage">Phone Number *</div>
               <input
+              className='input'
                 name="phoneNumber"
                 onChange={handleInput}
               />
@@ -84,6 +88,7 @@ const handleButtonValid = () => {
             <div className="addressInput">
               <div className="inputMessage">Address *</div>
               <input
+              className='input'
                 name="address"
                 onChange={handleInput}
               />
@@ -91,7 +96,7 @@ const handleButtonValid = () => {
       </form>
         <div className="agreeCheckbox">
             <div className="accountCheckboxAgree">
-              <input
+              <input             
                 type="checkbox"
                 className="checkbox"
                 onClick={isCheckBoxClicked}
