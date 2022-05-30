@@ -4,15 +4,24 @@
     box-sizing: border-box;
 }
 main{
-    background-color: black;
+    background-color: brown;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    
 }
-.signUp{
-    width: 100vw;
-    height: 100vh;
-    background-color: aqua;
-}
+
 .signUpInput{
-    background-color: bisque;
-    width: 25%;
-    height: 25%;
+     
+}
+.nameInput{
+   height: 7vh; 
+}
+.inputMessage{
+    background-color: azure;
+    height: 5vh;
+
+}
+.nameInput .inputMessage input{
+ height: 5vh;       
 }

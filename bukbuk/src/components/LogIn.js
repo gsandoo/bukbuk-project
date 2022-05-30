@@ -1,5 +1,5 @@
-import '../hello.css'
 import React,{useState} from 'react';
+import '../hello.css'
 
 function LogIn(){
 
@@ -13,7 +13,7 @@ function LogIn(){
 
   const [checkBoxActive, setCheckBoxActive] = useState(false);
 
-  const { username, email, password, phoneNumber, address } = inputValue;
+  const { userName, email, password, phoneNumber, address } = inputValue;
   
   const handleInput = event => {
     const { name, value } = event.target;
@@ -27,7 +27,7 @@ function LogIn(){
 const isValidEmail = email.includes('@') && email.includes('.');
 const specialLetter = password.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 const isValidPassword = password.length >= 8 && specialLetter >= 1;
-const isValidInput = username.length >= 1 && phoneNumber.length >= 1 && address.length >= 1;
+const isValidInput = userName.length >= 1 && phoneNumber.length >= 1 && address.length >= 1;
 const isCheckBoxClicked = () => {
     setCheckBoxActive(!checkBoxActive);
   };
