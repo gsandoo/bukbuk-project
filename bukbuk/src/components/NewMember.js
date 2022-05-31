@@ -92,8 +92,9 @@ const handleButtonValid = () => {
               <div className="inputMessage">주소 *</div>
               <div className='address'>
                 <input
-                type='text'
-                className='input'
+                  type='text'
+                  className='input'
+                  placeholder='검색 버튼을 사용하세요'
                   name="address"
                   onChange={handleInput}
                   readOnly
@@ -101,8 +102,15 @@ const handleButtonValid = () => {
                 <div className="search-address"><Adress/></div>
               </div>
               <input
+                  type='text'
+                  className='input'
+                  name="address"
+                  onChange={handleInput}
+                  readOnly
+                />
+                <input
                 type='text'
-                className='input'
+                className='input specific-address'
                   name="address"
                   onChange={handleInput}
                   readOnly

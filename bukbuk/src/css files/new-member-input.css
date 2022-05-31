@@ -28,10 +28,9 @@ main{
     padding-top: 1vh;
 }
 .input{
-   height: 4vh; 
-}
-.nameInput .inputMessage input{
- height: 5vh;       
+   width: 13vw;
+   height: 4vh;
+   padding-left: 1vw;
 }
 
 /* 이메일 값 */
@@ -86,6 +85,10 @@ main{
      align-items: center;
  }
 
+ .specific-address{
+     margin-left: 1vw;
+ }
+
  /* 체크 */
 .signUpButtonAction{
     width: 15vw;
@@ -100,4 +103,13 @@ main{
     background-color:#000000;
     color: #ffffff;
     transition: 0.5s;
+}
+
+
+/* 체크박스 */
+.agreeCheckbox{
+    padding: 3vh 0 3vh 0;
+}
+.accountCheckboxAgree{
+    padding: 1vh 0 1vh 0;
 }
