@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 main{
-    background-color: brown;
     position: absolute;
     top: 30%;
     left: 35%;
@@ -14,12 +13,14 @@ main{
 .signUpInput{
      
 }
+
+/* 이름 값 */
 .nameInput{
    height: 7vh; 
    margin-bottom: 2vh;
 }
 .inputMessage{
-    background-color: azure;
+  
     height: 5vh;
     padding-top: 1vh;
 }
@@ -28,4 +29,59 @@ main{
 }
 .nameInput .inputMessage input{
  height: 5vh;       
+}
+
+/* 이메일 값 */
+.emailInput{
+    height: 7vh; 
+    margin-bottom: 2vh;
+ }
+
+.emailInput .inputMessage input{
+  height: 5vh;       
+ }
+
+ /* 비밀번호 값 */
+ .passwordInput{
+    height: 7vh; 
+    margin-bottom: 2vh;
+ }
+
+.passwordInput .inputMessage input{
+  height: 5vh;       
+ }
+
+ /* 전화번호 값 */
+ .phoneNumberInput{
+    height: 7vh; 
+    margin-bottom: 2vh;
+ }
+
+.phoneNumberInput .inputMessage input{
+  height: 5vh;       
+ }
+
+
+ /* 주소 값 */
+.addressInput{
+    height: 7vh; 
+    margin-bottom: 2vh;
+ }
+
+.addressInput .inputMessage input{
+  height: 5vh;       
+ }
+.signUpButtonAction{
+    width: 15vw;
+    height: 5vh;
+    background-color: hwb(118 44% 9%);
+    color: #ffffff;
+    transition: 0.5s;
+}
+.signUpButtonInaction{
+    width: 15vw;
+    height: 5vh;
+    background-color:#000000;
+    color: #ffffff;
+    transition: 0.5s;
 }

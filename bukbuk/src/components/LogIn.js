@@ -30,6 +30,8 @@ const isValidPassword = password.length >= 8 && specialLetter >= 1;
 const isValidInput = userName.length >= 1 && phoneNumber.length >= 1 && address.length >= 1;
 const isCheckBoxClicked = () => {
     setCheckBoxActive(!checkBoxActive);
+    console.log(checkBoxActive);
+    
   };
 // 검사한 모든 로직의 유효성 검사가 true가 될때 getIsActive함수가 작동한다. 버튼 클릭 이벤트가 발생할때 넣어줄 함수.
 const getIsActive = 
@@ -41,10 +43,10 @@ const handleButtonValid = () => {
    !isValidInput ||
    !isValidEmail ||
    !isValidPassword ||
-   !isCheckBoxClicked()
+   !checkBoxActive
    ) {
    alert('please fill in the blanks');
- };
+ }else{console.log('success')};
 }
   // jsx코드
   
