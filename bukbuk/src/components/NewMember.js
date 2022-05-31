@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import '../css files/new-member-input.css';
-
+import Adress from './new-member-address/Adress';
 
 function LogIn(){
 
@@ -56,7 +56,7 @@ const handleButtonValid = () => {
     <main className='signUp'>
       <form className="signUpInput">
             <div className="nameInput">
-              <div className="inputMessage">Name *</div>
+              <div className="inputMessage">이름 *</div>
               <input
                 className='input'
                 name="userName"
@@ -64,7 +64,7 @@ const handleButtonValid = () => {
               />
             </div>
             <div className="emailInput">
-              <div className="inputMessage">Email(ID) *</div>
+              <div className="inputMessage">이메일(ID) *</div>
               <input
               className='input'
                 name="email"
@@ -72,7 +72,7 @@ const handleButtonValid = () => {
               />
             </div>
             <div className="passwordInput">
-              <div className="inputMessage">Password *</div>
+              <div className="inputMessage">비밀번호 *</div>
               <input
               className='input'
                 type="password"
@@ -81,7 +81,7 @@ const handleButtonValid = () => {
               />
             </div>
             <div className="phoneNumberInput">
-              <div className="inputMessage">Phone Number *</div>
+              <div className="inputMessage">전화번호 *</div>
               <input
               className='input'
                 name="phoneNumber"
@@ -89,12 +89,24 @@ const handleButtonValid = () => {
               />
             </div>
             <div className="addressInput">
-              <div className="inputMessage">Address *</div>
+              <div className="inputMessage">주소 *</div>
+              <div className='address'>
+                <input
+                type='text'
+                className='input'
+                  name="address"
+                  onChange={handleInput}
+                  readOnly
+                />
+                <div className="search-address"><Adress/></div>
+              </div>
               <input
-              className='input'
-                name="address"
-                onChange={handleInput}
-              />
+                type='text'
+                className='input'
+                  name="address"
+                  onChange={handleInput}
+                  readOnly
+                />
             </div>
       </form>
         <div className="agreeCheckbox">

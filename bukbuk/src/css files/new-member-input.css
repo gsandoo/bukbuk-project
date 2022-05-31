@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Do+Hyeon&family=Noto+Sans+KR:wght@300&family=Roboto&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: 'Do Hyeon';
 }
 main{
     position: absolute;
@@ -65,12 +68,25 @@ main{
  /* 주소 값 */
 .addressInput{
     height: 7vh; 
-    margin-bottom: 2vh;
+    margin-bottom: 8vh;
  }
 
 .addressInput .inputMessage input{
   height: 5vh;       
  }
+
+.address{
+     display: flex;
+     margin-bottom: 1vh;
+ }
+ .search-address{
+     margin-left: 1vw;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ /* 체크 */
 .signUpButtonAction{
     width: 15vw;
     height: 5vh;
