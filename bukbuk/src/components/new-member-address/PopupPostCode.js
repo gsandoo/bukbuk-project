@@ -17,11 +17,10 @@ const PopupPostCode = (props) => {
           fullAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
         }
         console.log(data)
-        console.log(fullAddress)
-        console.log(data.zonecode)
+        document.querySelector('.road-address').value =fullAddress;
+        document.querySelector('.post').value = data.zonecode;
         props.onClose()
     }
- 
     const postCodeStyle = {
         display: "block",
         position: "absolute",
@@ -32,9 +31,6 @@ const PopupPostCode = (props) => {
         padding: "7px",
       };
  
-     const close ={
-       
-     } 
     return(
       <>
       <div>

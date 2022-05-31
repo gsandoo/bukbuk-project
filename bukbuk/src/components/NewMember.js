@@ -28,6 +28,7 @@ function LogIn(){
 const isValidEmail = email.includes('@') && email.includes('.');
 const specialLetter = password.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 const isValidPassword = password.length >= 8 && specialLetter >= 1;
+const isValidPhone = phoneNumber.includes('-') && phoneNumber.length >= 13;
 const isValidInput = userName.length >= 1 && phoneNumber.length >= 1 && address.length >= 1;
 const isCheckBoxClicked = () => {
     setCheckBoxActive(!checkBoxActive);
@@ -36,18 +37,16 @@ const isCheckBoxClicked = () => {
   };
 // 검사한 모든 로직의 유효성 검사가 true가 될때 getIsActive함수가 작동한다. 버튼 클릭 이벤트가 발생할때 넣어줄 함수.
 const getIsActive = 
-   isValidEmail && isValidPassword && isValidInput && checkBoxActive === true;
+   isValidEmail && isValidPassword && isValidInput && checkBoxActive && isValidPhone === true;
 
 // 유효성 검사 중 하나라도 만족하지못할때 즉, 버튼이 비활성화 될 때 버튼을 클릭하면 아래와 같은 경고창이 뜬다.
 const handleButtonValid = () => {
- if (
-   !isValidInput ||
-   !isValidEmail ||
-   !isValidPassword ||
-   !checkBoxActive
-   ) {
-   alert('please fill in the blanks');
- }else{console.log('success')};
+ if (!isValidInput){alert('칸을 다 채워주세요')}
+ else if(!isValidEmail){alert('이메일 형식에 맞게 써주세요')}
+ else if(!isValidPassword ){alert('비밀번호는 8자리 이상과 특수문자를 1개이상 포함 해주세요')}
+ else if(!isValidPhone){alert('전화번호는 "-" 와 11자리 이상, 숫자로만 작성 해주세요')}
+ else if(!checkBoxActive){alert('체크박스를 클릭 해주세요')}
+ else{console.log('success')};
 }
   // jsx코드
   
@@ -93,7 +92,7 @@ const handleButtonValid = () => {
               <div className='address'>
                 <input
                   type='text'
-                  className='input'
+                  className='input post'
                   placeholder='검색 버튼을 사용하세요'
                   name="address"
                   onChange={handleInput}
@@ -103,7 +102,7 @@ const handleButtonValid = () => {
               </div>
               <input
                   type='text'
-                  className='input'
+                  className='input road-address'
                   name="address"
                   onChange={handleInput}
                   readOnly
@@ -113,7 +112,6 @@ const handleButtonValid = () => {
                 className='input specific-address'
                   name="address"
                   onChange={handleInput}
-                  readOnly
                 />
             </div>
       </form>

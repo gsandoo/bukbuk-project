@@ -78,14 +78,14 @@ main{
      display: flex;
      margin-bottom: 1vh;
  }
- .search-address{
+.search-address{
      margin-left: 1vw;
      display: flex;
      justify-content: center;
      align-items: center;
  }
 
- .specific-address{
+.specific-address{
      margin-left: 1vw;
  }
 
