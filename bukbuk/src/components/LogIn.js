@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
-import '../hello.css'
+import '../css files/new-member-input.css';
+
 
 function LogIn(){
 
