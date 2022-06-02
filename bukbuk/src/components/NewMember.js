@@ -125,14 +125,14 @@ const handleButtonValid = () => {
                     onClick={isCheckBoxClicked}
                   />
                   <span className="checkboxContent">
-                    I agree to the
-                    <span className="line">terms conditions and privacy policy</span>*
+                    나는 해당 안내문을 읽고
+                    <span className="line">&nbsp;동의합니다</span>*
                   </span>
                 </div>
                 <div className="accountCheckboxAgree">
                   <input type="checkbox" className="checkbox" />
                   <span className="checkboxContent">
-                    I would like to receive you newsletter
+                    본 사이트에서 제공해 드리는 안내문을 SMS 로 받길 원합니다
                   </span>
                 </div>
                 <span className="checkboxExplain">
@@ -148,7 +148,7 @@ const handleButtonValid = () => {
                 type="button"
                 onClick={handleButtonValid}
               >
-                CREATE USER ACCOUNT
+                BUKBUK의 회원되기
               </button>
             </div>
       </form>

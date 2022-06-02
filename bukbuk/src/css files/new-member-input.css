@@ -91,18 +91,22 @@ main{
 
  /* 체크 */
 .signUpButtonAction{
+    font-size: 1.5em;
     width: 15vw;
     height: 5vh;
     background-color: hwb(118 44% 9%);
     color: #ffffff;
     transition: 0.5s;
+    cursor: pointer;
 }
 .signUpButtonInaction{
+    font-size: 1.5em;
     width: 15vw;
     height: 5vh;
     background-color:#000000;
     color: #ffffff;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 
