@@ -53,7 +53,10 @@ const handleButtonValid = () => {
   return (
     
     <main className='signUp'>
-      <form className="signUpInput">
+      <form 
+      className="signUpInput"
+      action=''//은채 데베
+      method='POST' >
             <div className="nameInput">
               <div className="inputMessage">이름 *</div>
               <input
@@ -114,41 +117,41 @@ const handleButtonValid = () => {
                   onChange={handleInput}
                 />
             </div>
+            <div className="agreeCheckbox">
+                <div className="accountCheckboxAgree">
+                  <input             
+                    type="checkbox"
+                    className="checkbox"
+                    onClick={isCheckBoxClicked}
+                  />
+                  <span className="checkboxContent">
+                    I agree to the
+                    <span className="line">terms conditions and privacy policy</span>*
+                  </span>
+                </div>
+                <div className="accountCheckboxAgree">
+                  <input type="checkbox" className="checkbox" />
+                  <span className="checkboxContent">
+                    I would like to receive you newsletter
+                  </span>
+                </div>
+                <span className="checkboxExplain">
+                  You will be able to set your password after you've confirmed your
+                  email address
+                </span>
+              </div>
+            <div className="signUpBotton">
+              <button
+                className={
+                  getIsActive ? 'signUpButtonAction' : 'signUpButtonInaction'
+                }
+                type="button"
+                onClick={handleButtonValid}
+              >
+                CREATE USER ACCOUNT
+              </button>
+            </div>
       </form>
-        <div className="agreeCheckbox">
-            <div className="accountCheckboxAgree">
-              <input             
-                type="checkbox"
-                className="checkbox"
-                onClick={isCheckBoxClicked}
-              />
-              <span className="checkboxContent">
-                I agree to the
-                <span className="line">terms conditions and privacy policy</span>*
-              </span>
-            </div>
-            <div className="accountCheckboxAgree">
-              <input type="checkbox" className="checkbox" />
-              <span className="checkboxContent">
-                I would like to receive you newsletter
-              </span>
-            </div>
-            <span className="checkboxExplain">
-              You will be able to set your password after you've confirmed your
-              email address
-            </span>
-          </div>
-        <div className="signUpBottom">
-          <button
-            className={
-              getIsActive ? 'signUpButtonAction' : 'signUpButtonInaction'
-            }
-            type="button"
-            onClick={handleButtonValid}
-          >
-            CREATE USER ACCOUNT
-          </button>
-        </div>
     </main>
     )
   }
