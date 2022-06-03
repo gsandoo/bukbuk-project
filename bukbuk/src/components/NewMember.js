@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import '../css files/new-member-input.css';
 import Adress from './new-member-address/Adress';
+import '../css files/font.css';
 
 function LogIn(){
 
@@ -108,13 +109,15 @@ const handleButtonValid = () => {
                   className='input road-address'
                   name="address"
                   onChange={handleInput}
+                  placeholder='도로명 주소'
                   readOnly
                 />
                 <input
                 type='text'
                 className='input specific-address'
-                  name="address"
-                  onChange={handleInput}
+                name="address"
+                onChange={handleInput}
+                placeholder='상세주소'
                 />
             </div>
             <div className="agreeCheckbox">
@@ -136,8 +139,7 @@ const handleButtonValid = () => {
                   </span>
                 </div>
                 <span className="checkboxExplain">
-                  You will be able to set your password after you've confirmed your
-                  email address
+                  * 는 필수
                 </span>
               </div>
             <div className="signUpBotton">
