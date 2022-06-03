@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import './css files/new-member-input.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
