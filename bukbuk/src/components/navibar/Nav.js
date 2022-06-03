@@ -1,5 +1,6 @@
 import React from "react";
 import '../../css files/nav.css';
+import {Link} from 'react-router-dom';
 
 
 function Nav(){
@@ -28,13 +29,13 @@ function Nav(){
             </div>
             <div className="tab">
                 <div className="login">
-                    <div className="login-btn">로그인</div>
+                    <div className="login-btn"><Link to={'/Login'}>로그인</Link></div>
                 </div>
                 <div className="new-member">
-                    <div className="new-member-btn">회원가입</div>
+                    <div className="new-member-btn"><Link to={'/New-member'}>회원가입</Link></div>
                 </div>
                 <div className="help">
-                    <div className="service-btn">고객센터</div>
+                    <div className="service-btn"><Link to={'/Service'}>고객센터</Link></div>
                 </div>
             </div>
         </div>
