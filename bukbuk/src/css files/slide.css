@@ -7,3 +7,6 @@
 .photos img{
     margin: 0 auto;
 }
+.slick-dots li{
+    border: none;
+}

@@ -17,9 +17,7 @@ function Nav(){
                 </div>
             </div>
             <div className="search">
-                <div className="search-type">
                 <Input/>
-                </div>
             </div>
             <div className="tab">
                 <div className="login">
