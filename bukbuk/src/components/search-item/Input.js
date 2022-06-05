@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { bookSearch } from "./api";
 import Item from "./Item";
-import "./test.css";
+import "./Input.css";
 
-
-
-const Test = props => {
+const Input = props => {
   const [books, setBooks] = useState([]);
   const [text, setText] = useState("");
   const [query, setQuery] = useState("");
@@ -36,7 +34,7 @@ const Test = props => {
       query: query,
       sort: "accuracy", // accuracy | recency 정확도 or 최신
       page: 1, // 페이지번호
-      size: 21 // 한 페이지에 보여 질 문서의 개수
+      size: 20 // 한 페이지에 보여 질 문서의 개수
     };
 
 
@@ -51,19 +49,25 @@ const Test = props => {
 
   return (
     <>
-    <div className="container">
-      <input
+    <div className="search-type">
+        <input 
+        type="search" 
+        name="query" 
+        placeholder="도서명 / isbn 검색" 
+        className="input-search"
+        onKeyDown={onEnter}
+        onChange={onTextUpdate}
+        value={text}
+        />
+      </div>
+    <div className="search-btn">
+        <button 
         type="search"
-        placeholder="검색어를 입력 하세요..."
-        name="query"
-        className="input_search"
-        onKeyDown={onEnter} // enter
-        onChange={onTextUpdate} // change
-        value={text} // view
-      />
-      <button onClick={onClick}>검색</button>
+        onClick={onClick}>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxsZsjY46D3whfdkqeE3BvzAKy61374wBUGw&usqp=CAU" alt="search-btn" />
+        </button>
     </div>
-    <ul>
+    <ul className="ul">
         {books.map((book, index) => (
           <Item
             key={index}
@@ -79,4 +83,4 @@ const Test = props => {
     </>
   );
 };
-export default Test;
+export default Input;

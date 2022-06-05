@@ -3,7 +3,7 @@ import React from "react";
 function Login(){
     return(
         <div>
-            Hello
+            Hello This is Login 창 
         </div>
     );
 };

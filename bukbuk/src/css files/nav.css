@@ -22,6 +22,8 @@
 }
 .icon{
     width: 50%;
+}
+.icon>a{
     display: flex;
     align-items: center;
     justify-content: right;
@@ -44,11 +46,7 @@
     align-items: center;
     justify-content: center;
 }
-.search-form{
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
+
 .search-type{
     display: flex;
     width: 80%;

@@ -3,7 +3,7 @@ import React from "react";
 function Service(){
     return(
         <div>
-            hello
+            This is 고객센터 창 
         </div>
     );
 };

@@ -1,23 +1,26 @@
 import React from "react";
 import '../../css files/nav.css';
 import {Link} from 'react-router-dom';
-import Test from "../Test/Test";
+import Input from "../search-item/Input";
 
 
 function Nav(){
     return(
+        <>
         <div id="navibar" className="nav-flex">
             <div className="nav-left">
                 <div className="icon">
-                    <img src="https://i.pinimg.com/736x/e5/99/a8/e599a837c7838a6da566c099c88ac3dd.jpg" alt="icon" className="title-icon" />
+                    <Link to={'/'}><img src="https://i.pinimg.com/736x/e5/99/a8/e599a837c7838a6da566c099c88ac3dd.jpg" alt="icon" className="title-icon" /></Link>
                 </div>
                 <div className="title">
                     BUKBUK
                 </div>
             </div>
             <div className="search">
-                <Test/>
-            </div>    
+                <div className="search-type">
+                <Input/>
+                </div>
+            </div>
             <div className="tab">
                 <div className="login">
                     <div className="login-btn"><Link to={'/Login'}>로그인</Link></div>
@@ -30,6 +33,7 @@ function Nav(){
                 </div>
             </div>
         </div>
+        </>
     );
 }; 
 

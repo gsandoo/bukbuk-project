@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Do+Hyeon&family=Noto+Sans+KR:wght@300&family=Roboto&display=swap');
 
 * {
   font-family: "Noto Sans KR", sans-serif;
@@ -37,13 +37,16 @@ body {
   border-bottom: 1px solid #0675f3;
 }
 
-ul {
+.ul {
+  position: absolute;
+  top: 70%;
+  left: 0;
   display: grid;
   padding: 20px;
-  width: 1100px;
+  width: 100vw;
   margin: auto;
-  grid-gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1vw;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 li {
