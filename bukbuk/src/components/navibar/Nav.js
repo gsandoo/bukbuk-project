@@ -1,6 +1,7 @@
 import React from "react";
 import '../../css files/nav.css';
 import {Link} from 'react-router-dom';
+import Test from "../Test/Test";
 
 
 function Nav(){
@@ -15,18 +16,8 @@ function Nav(){
                 </div>
             </div>
             <div className="search">
-                <form 
-                action="" 
-                method=""
-                className="search-form">
-                    <div className="search-type">
-                        <input type="text" placeholder="도서명 / isbn 검색" />
-                    </div>
-                    <div className="search-btn">
-                        <button type="submit"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxsZsjY46D3whfdkqeE3BvzAKy61374wBUGw&usqp=CAU" alt="search-btn" /></button>
-                    </div>
-                </form>
-            </div>
+                <Test/>
+            </div>    
             <div className="tab">
                 <div className="login">
                     <div className="login-btn"><Link to={'/Login'}>로그인</Link></div>
