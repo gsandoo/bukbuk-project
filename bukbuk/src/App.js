@@ -3,10 +3,10 @@ import './App.css';
 import './css files/new-member-input.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Login from './components/login/Login';
-import Nav from './components/navibar/Nav';
 import NewMember from './components/NewMember';
 import Service from './components/service/Service';
 import Home from './components/Home';
+import ServiceWrite from './components/service/ServiceWrite';
 
 function App() {
    
@@ -17,6 +17,7 @@ return(
       <Route path={'/Login'} component={Login}/>
       <Route path={'/New-member'}component={NewMember}/>
       <Route path={'/Service'} component={Service}/>
+      <Route path={'/Write'} component={ServiceWrite}/>
       </Switch>
    </BrowserRouter>
 )

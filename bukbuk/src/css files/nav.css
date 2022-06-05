@@ -12,6 +12,7 @@
 #navibar{
     width: 100%;
     height: 150px;
+    border-bottom: 3px solid lightblue;
 }
 .nav-flex{
     display: flex;

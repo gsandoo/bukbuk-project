@@ -21,13 +21,13 @@ function Nav(){
             </div>
             <div className="tab">
                 <div className="login">
-                    <div className="login-btn"><Link to={'/Login'}>로그인</Link></div>
+                    <Link to={'/Login'}><div className="login-btn">로그인</div></Link>
                 </div>
                 <div className="new-member">
-                    <div className="new-member-btn"><Link to={'/New-member'}>회원가입</Link></div>
+                   <Link to={'/New-member'}> <div className="new-member-btn">회원가입</div></Link>
                 </div>
                 <div className="help">
-                    <div className="service-btn"><Link to={'/Service'}>고객센터</Link></div>
+                    <Link to={'/Service'}><div className="service-btn">고객센터</div></Link>
                 </div>
             </div>
         </div>

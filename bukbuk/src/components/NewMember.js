@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import Nav from './navibar/Nav';
 import '../css files/new-member-input.css';
 import Adress from './new-member-address/Adress';
 import '../css files/font.css';
@@ -52,7 +53,8 @@ const handleButtonValid = () => {
   // jsx코드
   
   return (
-    
+    <>
+    <Nav/>
     <main className='signUp'>
       <form 
       className="signUpInput"
@@ -155,6 +157,7 @@ const handleButtonValid = () => {
             </div>
       </form>
     </main>
+    </>
     )
   }
 
