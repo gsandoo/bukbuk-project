@@ -1,10 +1,11 @@
 import React from "react";
+import Nav from "../navibar/Nav";
 
 function Login(){
     return(
-        <div>
-            Hello This is Login 창 
-        </div>
+        <>
+            <Nav/> 
+        </>
     );
 };
 
