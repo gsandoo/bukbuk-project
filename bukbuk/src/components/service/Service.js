@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "../navibar/Nav";
 import '../../css files/service.css'
 import {Link} from 'react-router-dom';
+import Menu from "../navibar/Menu";
 
 
 function Service(){
@@ -9,7 +10,8 @@ function Service(){
     return(
         <>
         <Nav/>
-        <main>
+        <Menu/>
+        <main className="service-main">
             <div id="board">
                 <h1 className="title">질문</h1>
                 <p className="qustion">내용</p>

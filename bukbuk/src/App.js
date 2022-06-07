@@ -7,7 +7,7 @@ import NewMember from './components/NewMember';
 import Service from './components/service/Service';
 import Home from './components/Home';
 import ServiceWrite from './components/service/ServiceWrite';
-
+import Oldbooks from './components/oldbook/Oldbooks';
 function App() {
    
 return(
@@ -18,6 +18,7 @@ return(
       <Route path={'/New-member'}component={NewMember}/>
       <Route path={'/Service'} component={Service}/>
       <Route path={'/Write'} component={ServiceWrite}/>
+      <Route path={'/Oldbooks'} component={Oldbooks}/>
       </Switch>
    </BrowserRouter>
 )

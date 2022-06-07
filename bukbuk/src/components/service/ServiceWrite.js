@@ -6,7 +6,7 @@ function ServiceWrite(){
     return(
         <>
             <Nav/>
-            <main>
+            <main className="service-main">
                 <div id="writedown">
                     <input className="title-input" type="text" placeholder="제목을 입력해주세요"/>
                     <textarea className="text-area" placeholder="내용을 입력해주세요"></textarea>

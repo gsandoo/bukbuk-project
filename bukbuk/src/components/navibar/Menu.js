@@ -16,7 +16,7 @@ function Menu(){
                 <div className="qna-btn"><Link to={'/Talk'}>게시판</Link></div>
             </div>
             <div className="oldbooks">
-                <div className="oldbooks-btn"><Link to={'/Login'}>중고서점</Link></div>
+                <div className="oldbooks-btn"><Link to={'/Oldbooks'}>중고서점</Link></div>
             </div>
         </div>
     );
