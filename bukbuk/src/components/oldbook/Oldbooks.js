@@ -1,32 +1,30 @@
-import React,{useEffect} from "react";
-import Menu from "../navibar/Menu";
-import Nav from "../navibar/Nav";
-import '../../css files/map.css';
+import React, { useState } from 'react';
+import MapContainer from './MapContainer';
 
+function Oldbooks() {
+  const [InputText, setInputText] = useState('')
+  const [Place, setPlace] = useState('')
 
+  const onChange = (e) => {
+    setInputText(e.target.value)
+  }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setPlace(InputText)
+    setInputText('')
+  }
 
-function Oldbooks(){
-    const {kakao} = window;
-    useEffect(() => {
-        const container = document.getElementById('myMap');
-		const options = {
-			center: new kakao.maps.LatLng(33.450701, 126.570667),
-			level: 3
-		};
-        const map = new kakao.maps.Map(container, options);
-    }, []);
-   return(
-        <div>
-            <Nav/>
-            <Menu/>
-            <div id="map">
-                
-                
-            </div>
-        </div>
-    );
-};
+  return (
+    <>
+      <form className="inputForm" onSubmit={handleSubmit}>
+        <input placeholder="검색어를 입력하세요" onChange={onChange} value={InputText} />
+        <button type="submit">검색</button>
+      </form>
+      <MapContainer searchPlace={Place} />
+    </>
+  )
+}
 
 export default Oldbooks;
 
