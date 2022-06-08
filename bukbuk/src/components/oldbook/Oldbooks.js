@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import MapContainer from './MapContainer';
+import '../../css files/oldbook.css';
+import Nav from '../navibar/Nav';
+import Menu from '../navibar/Menu';
 
 function Oldbooks() {
   const [InputText, setInputText] = useState('')
@@ -16,12 +19,22 @@ function Oldbooks() {
   }
 
   return (
-    <>
+      <>
+    <Nav/>
+    <Menu/>
+    <div id='oldbook'>
       <form className="inputForm" onSubmit={handleSubmit}>
-        <input placeholder="검색어를 입력하세요" onChange={onChange} value={InputText} />
+        <input 
+        placeholder="'사는동네'+'서점' 을 검색하세요" 
+        onChange={onChange} 
+        value={InputText} 
+        />
         <button type="submit">검색</button>
       </form>
-      <MapContainer searchPlace={Place} />
+      <MapContainer 
+      searchPlace={Place}
+      className="map" />
+    </div>
     </>
   )
 }

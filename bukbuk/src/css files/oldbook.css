@@ -1,0 +1,36 @@
+#oldbook{
+}
+
+.inputForm{
+    width: 100%;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputForm>input{
+    width: 40%;
+    height: 7vh;
+    border-radius: 70px;
+    text-align: center;
+    font-size: 1.5em;
+}
+#center{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#map{
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#myMap{
+    width: 500px;
+    height: 500px;   
+}
+#result-list{
+
+}
