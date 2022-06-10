@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, {useState  ,useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import Nav from "../navibar/Nav";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 function ServiceWrite(){
+   
+    
 
     // 제목과 내용을 담는 상태 변경 useState
     const [content , setContent] = useState({
@@ -14,10 +17,26 @@ function ServiceWrite(){
 
 
     // 입력 받은 값을 전체 고객센터 창에 띄우는 상태변경 useState
-    const {viewContent , setViewContent} = useState ([
-        
-    ])
+    const [viewContent , setViewContent] = useState ([])
   
+
+
+    useEffect(()=>{
+        axios.get('http://localhost:8000/api/get').then((response)=>{
+          setViewContent(response.data);
+        })
+      },[viewContent])
+    
+      const submitReview = ()=>{
+        axios.post('http://localhost:8000/api/insert', {
+          title: content.title,
+          content: content.content
+        }).then(()=>{
+          alert('등록 완료!');
+        }).catch(
+            console.log("서버에 도달하지 못했습니다."))
+      };
+
 
 
 
@@ -68,7 +87,10 @@ function ServiceWrite(){
                             console.log('Focus.', editor);
                         }}
                     />
-                    <button className="submit">입력</button>
+                    <button 
+                    className="submit"
+                    onClick={submitReview}
+                    >입력</button>
                     <Link to={'/Service'}><button className="go-back">돌아가기</button></Link>
                 </div>
             </main>
