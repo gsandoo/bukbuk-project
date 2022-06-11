@@ -57,6 +57,7 @@ function Service(){
         <Menu/>
         <main className="service-main">
             <div id="board">
+                <h1>고객문의 FaQ</h1>
                {viewContent.map(element=>
                 <div style={{borderBottom: '1px solid lightgray'}}>
                     <h2>{element.title}</h2>
@@ -105,7 +106,7 @@ function Service(){
                     submitReview
                 }
                 >입력</button>
-                <Link to={'/Service'}><button className="go-back">돌아가기</button></Link>
+                <Link to={'/'}><button className="go-back">돌아가기</button></Link>
             </div>         
         </main>
         </>
