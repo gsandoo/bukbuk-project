@@ -14,11 +14,11 @@ return(
   <BrowserRouter>
   <Switch> 
       <Route path={'/'} exact component={Home} />
-      <Route path={'/Login'} component={Login}/>
-      <Route path={'/New-member'}component={NewMember}/>
-      <Route path={'/Service'} component={Service}/>
-      <Route path={'/Write'} component={ServiceWrite}/>
-      <Route path={'/Oldbooks'} component={Oldbooks}/>
+      <Route path={'/login'} component={Login}/>
+      <Route path={'/new-member'}component={NewMember}/>
+      <Route path={'/service'} component={Service}/>
+      <Route path={'/write'} component={ServiceWrite}/>
+      <Route path={'/oldbooks'} component={Oldbooks}/>
       </Switch>
    </BrowserRouter>
 )
