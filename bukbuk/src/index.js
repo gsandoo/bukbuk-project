@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Api from './components/oldbook/Api';
+import Test from './components/test/Test';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    <App/>
+    <Test/>
 
 );
 
