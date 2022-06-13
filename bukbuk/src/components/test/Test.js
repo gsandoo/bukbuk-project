@@ -16,27 +16,19 @@ function Test(){
 
 
 
-//     useEffect(()=>{
-//                axios.post('http://localhost:8080/service')
-//                .then(res=>{
-//                res.parse()
-//                }).then(data=>console.log(data))
-//                .catch(console.log('error2'))
-//              },[]);
 
- useEffect( async()=>{
+ useEffect(()=>{
         
-           await Axios.get('https://jsonplaceholder.typicode.com/users')
+            Axios.get('https://jsonplaceholder.typicode.com/users')
             .then((response)=>{
               setViewContent(response.data);
+              console.log(response)
                 
             }).catch(e=>console.log(e))
             
-     },[])
+},[])
 
        
-
-    // 입력받은 값을 이름에 맞게 할당 해주는 getValue
 
     return(
         <main className="service-main">
