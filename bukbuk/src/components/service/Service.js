@@ -64,7 +64,9 @@ function Service(){
         <Menu/>
         <main className="service-main">
             <div id="board">
-                <h1>고객문의 FaQ</h1>
+                <div class="service-title">
+                    <h1>고객문의 FaQ</h1>
+                </div>
                {/* {viewContent.map(element=>
                 <div style={{borderBottom: '1px solid lightgray'}}>
                     <h2>{element.title}</h2>
@@ -73,10 +75,13 @@ function Service(){
                     </div>
                 </div>
                )} */}
-               <div>
+               <div className="faq">
                     <ShowFaq content={viewContent}/>
                </div>
             </div>
+            <Link to={'/write'}>
+                <button className="write-button">글쓰기</button>
+            </Link>
         </main>
         </>
     );

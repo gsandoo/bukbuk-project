@@ -5,13 +5,13 @@
 }
 
 #board{
-    background-color: beige;
     width: 100%;
-    height: 70%;
     margin-bottom: 3vh;
 }
 
-
+.service-title{
+    border-bottom: 3px solid lightgray;
+}
 
 /* 글 쓰는 창 */
 

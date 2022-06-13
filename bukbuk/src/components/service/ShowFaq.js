@@ -1,13 +1,14 @@
 import React from "react";
-import '../../css files/test.css'
+import '../../css files/service-faq.css';
 
 function ShowFaq({content}){
     return(
-        <div className="yellowbox">
+        <div className="faq-box">
             {content.map(user=>{
-                return (<div key ={user.id}>
+                return (
+                <div key ={user.id}>
                     {user.name}
-                    </div>)
+                </div>)
             })}
         </div>
     );
