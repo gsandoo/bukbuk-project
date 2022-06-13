@@ -1,0 +1,22 @@
+{"service":
+[
+{"service_category":1,
+"service_id":"test",
+"service_title":"test 제목",
+"service_context":"내용~",
+"service_date":"2022-06-11 22:43:49",
+"service_hit":0,
+"service_group":1,
+"service_step":0,
+"service_indent":0},
+{"service_category":2,
+"service_id":"test2",
+"service_title":"test 제목2",
+"service_context":"내용~2",
+"service_date":"2022-06-12 15:06:16",
+"service_hit":0,
+"service_group":1,
+"service_step":0,
+"service_indent":0}
+]
+}
