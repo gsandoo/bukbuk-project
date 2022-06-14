@@ -1,4 +1,4 @@
-import React, {useState  ,useEffect } from "react";
+import React, {useState} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Nav from "../navibar/Nav";
@@ -54,7 +54,6 @@ function ServiceWrite(){
                     placeholder="제목을 입력해주세요"
                     onChange={getValue}
                     name="title"/>
-                    {/* <textarea className="text-area" placeholder="내용을 입력해주세요"></textarea> */}
                     <CKEditor
                         editor={ClassicEditor}
                         data="<p>Hello from CKEditor 5!</p>"
