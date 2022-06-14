@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { bookSearch } from "./api";
-import Item from "./Item";
 import "../../css files/Input.css";
 
 const Input = props => {
@@ -46,7 +45,7 @@ const Input = props => {
       setBooks(books.concat(data.documents));
     }
   };
-
+  // console.log(books);
   return (
     <>
     <div className="search-type">
@@ -67,19 +66,6 @@ const Input = props => {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxsZsjY46D3whfdkqeE3BvzAKy61374wBUGw&usqp=CAU" alt="search-btn" />
         </button>
     </div>
-    <ul className="ul">
-        {books.map((book, index) => (
-          <Item
-            key={index}
-            thumbnail={book.thumbnail}
-            title={book.title}
-            blogname={book.blogname}
-            contents={book.contents}
-            url={book.url}
-            authors ={book.authors}
-          />
-        ))}
-      </ul>
     </>
   );
 };
