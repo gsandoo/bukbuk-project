@@ -4,9 +4,6 @@ import Nav from "../navibar/Nav";
 import '../../css files/service.css'
 import {Link} from 'react-router-dom';
 import Menu from "../navibar/Menu";
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import ReactHtmlParser from 'react-html-parser';
 import ShowFaq from "./ShowFaq";
 
 function Service(){  
@@ -24,7 +21,7 @@ function Service(){
     
     useEffect(()=>{
         
-        Axios.get('https://jsonplaceholder.typicode.com/users')
+        Axios.get(/*여기 주석 지우고 'localhost 주소 적어주세요'*/)
         .then((response)=>{
           setViewContent(response.data);
           console.log(response)
