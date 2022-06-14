@@ -37,15 +37,7 @@ function Service(){
                 <div class="service-title">
                     <h1>고객문의 FaQ</h1>
                 </div>
-               {/* {viewContent.map(element=>
-                <div style={{borderBottom: '1px solid lightgray'}}>
-                    <h2>{element.title}</h2>
-                    <div>
-                        {ReactHtmlParser(element.content)}
-                    </div>
-                </div>
-               )} */}
-               <div className="faq">
+               <div className="faq" >
                     <ShowFaq faq={viewContent}/>
                </div>
             </div>
