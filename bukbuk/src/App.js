@@ -3,7 +3,7 @@ import './App.css';
 import './css files/new-member-input.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Login from './components/login/Login';
-import NewMember from './components/NewMember';
+import NewMember from './components/./new-member/NewMember';
 import Service from './components/service/Service';
 import Home from './components/Home';
 import ServiceWrite from './components/service/ServiceWrite';

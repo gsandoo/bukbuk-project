@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
-import Nav from './navibar/Nav';
-import '../css files/new-member-input.css';
-import Adress from './new-member-address/Adress';
-import '../css files/font.css';
+import Nav from '../navibar/Nav';
+import '../../css files/new-member-input.css';
+import Adress from './Adress';
+import '../../css files/font.css';
 
 function LogIn(){
 
@@ -156,6 +156,7 @@ const handleButtonValid = () => {
               </button>
             </div>
       </form>
+      
     </main>
     </>
     )
