@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Nav from "../navibar/Nav";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import '../../css files/service-write.css';
 
 function ServiceWrite(){
    
@@ -15,18 +16,10 @@ function ServiceWrite(){
         content: ""
     })
 
-
-    // 입력 받은 값을 전체 고객센터 창에 띄우는 상태변경 useState
-    const [viewContent , setViewContent] = useState ([])
   
 
 
-    useEffect(()=>{
-        axios.get('http://localhost:8000/api/get').then((response)=>{
-          setViewContent(response.data);
-        })
-      },[viewContent])
-    
+    // 서버 받는 코드
       const submitReview = ()=>{
         axios.post('http://localhost:8000/api/insert', {
           title: content.title,

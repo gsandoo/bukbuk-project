@@ -21,7 +21,7 @@ function Service(){
     
     useEffect(()=>{
         
-        Axios.get(/*여기 주석 지우고 'localhost 주소 적어주세요'*/)
+        Axios.get('https://jsonplaceholder.typicode.com/users')
         .then((response)=>{
           setViewContent(response.data);
           console.log(response)
@@ -73,7 +73,7 @@ function Service(){
                 </div>
                )} */}
                <div className="faq">
-                    <ShowFaq content={viewContent}/>
+                    <ShowFaq faq={viewContent}/>
                </div>
             </div>
             <Link to={'/write'}>

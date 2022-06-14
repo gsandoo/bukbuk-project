@@ -1,5 +1,27 @@
+.flex{
+    display: flex;
+}
+
+
+/* 화면에 띄워질 박스 */
 .faq-box{
-    background-color: aliceblue;
+    
+    width: 100%;
     margin-top: 5vh;
     padding: 5vh 0 5vh 0;
+}
+
+/* 인덱스 넘버 */
+.faq-index{
+    background-color: beige;
+}
+
+/* 제목 */
+.faq-title{
+    background-color: crimson;
+}
+
+/* 조회수 */
+.faq-look{
+    background-color: yellowgreen;
 }
