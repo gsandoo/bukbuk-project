@@ -13,7 +13,7 @@ function Nav(){
                     <Link to={'/'}><img src="https://i.pinimg.com/736x/e5/99/a8/e599a837c7838a6da566c099c88ac3dd.jpg" alt="icon" className="title-icon" /></Link>
                 </div>
                 <div className="title">
-                    BUKBUK
+                    <Link to={'/'}>BUKBUK</Link> 
                 </div>
             </div>
             <div className="search">
