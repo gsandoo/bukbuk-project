@@ -16,12 +16,18 @@ const Input = props => {
 
   // 엔터를 눌렀을 때 호출 되는 함수
   const onEnter = e => {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13)  {
       setQuery(text);
+    }if (window.location.pathname !=='/'){
+      alert('검색은 메인페이지를 이용하세요')
     }
   };
   const onClick = () =>{
-    setQuery(text);
+    if(window.location.pathname === '/'){
+      setQuery(text)
+    }else{
+      alert("검색은 메인페이지를 이용하세요")
+    }
   }
 
   // text 검색어가 바뀔 때 호출되는 함수.
@@ -46,6 +52,7 @@ const Input = props => {
       setBooks(books.concat(data.documents));
     }
   };
+  // console.log(window.location.pathname)
   // console.log(books);
   return (
     <>
@@ -59,7 +66,7 @@ const Input = props => {
         onChange={onTextUpdate}
         value={text}
         />
-      </div>
+    </div>
     <div className="search-btn">
         <button 
         type="search"

@@ -47,7 +47,9 @@ body {
   border-radius: 10px;
 }
 .item-box {
-  
+  position: absolute;
+  top: 70%;
+  left: 0;
   display: grid;
   padding: 1%;
   width: 100%;
