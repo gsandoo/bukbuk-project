@@ -1,10 +1,10 @@
 import React from "react";
 import '../../css files/test.css'
 
-function Testtwo({users}){
+function Testtwo({content}){
     return(
         <div className="yellowbox">
-            {users.map(user=>{
+            {content.map(user=>{
                 return (<div key ={user.id}>
                     {user.name}
                     </div>)
