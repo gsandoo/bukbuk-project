@@ -13,3 +13,7 @@ const Kakao = axios.create({
 export const bookSearch = params => {
   return Kakao.get("/v3/search/book", { params });
 };
+
+export const recentBook = params => {
+  return Kakao.get("/v3/search/book", { params });
+};

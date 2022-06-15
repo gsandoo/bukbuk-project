@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import './css files/new-member-input.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Login from './components/login/Login';
 import NewMember from './components/./new-member/NewMember';
@@ -8,7 +7,7 @@ import Service from './components/service/Service';
 import Home from './components/Home';
 import ServiceWrite from './components/service/ServiceWrite';
 import Oldbooks from './components/oldbook/Oldbooks';
-
+import Books from './components/search-item/Books';
 function App() {
    
    return(
@@ -20,6 +19,7 @@ function App() {
             <Route path={'/service'} component={Service}/>
             <Route path={'/write'} component={ServiceWrite}/>
             <Route path={'/oldbooks'} component={Oldbooks}/>
+            <Route path={'/book/description'} component={Books}/>
          </Switch>
       </BrowserRouter>
    )

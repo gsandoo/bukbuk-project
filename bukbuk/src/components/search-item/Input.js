@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { bookSearch } from "./api";
+import { bookSearch , recentBook} from "./api";
 import "../../css files/Input.css";
 import Item from "./Item";
 
@@ -14,7 +14,15 @@ const Input = props => {
     }
   }, [query]);
 
-  // 엔터를 눌렀을 때 호출 되는 함수
+
+  // 신간도서 코드
+  // useEffect(() => {
+  //   if (query.length > 0) {
+  //     recentBookHttpHandler(query, true);
+  //   }
+  // }, [query]);
+
+
   const onEnter = e => {
     if (e.keyCode === 13)  {
       setQuery(text);
@@ -38,11 +46,10 @@ const Input = props => {
   const bookSearchHttpHandler = async (query, reset) => {
     const params = {
       query: query,
-      sort: "accuracy", // accuracy | recency 정확도 or 최신
+      sort: 'accuracy', // accuracy | recency 정확도 or 최신
       page: 1, // 페이지번호
       size: 20 // 한 페이지에 보여 질 문서의 개수
     };
-
 
     // 책의 정보
     const { data } = await bookSearch(params);
@@ -52,8 +59,27 @@ const Input = props => {
       setBooks(books.concat(data.documents));
     }
   };
+
+
+  // 신간도서 코드
+//   const recentBookHttpHandler = async  (query, reset) => {
+//     const params = {
+//       query: query,
+//       sort: 'accuracy', // accuracy | recency 정확도 or 최신
+//       page: 1, // 페이지번호
+//       size: 20 // 한 페이지에 보여 질 문서의 개수
+//     };
+
+//   // const { data } = await recentBook(params);
+//   // if (reset) {
+//   //   setBooks(data.documents); //책 정보들이 콘솔창에 띄워짐.
+//   // } else {
+//   //   setBooks(books.concat(data.documents));
+//   // }
+// };
   // console.log(window.location.pathname)
   // console.log(books);
+  
   return (
     <>
     <div className="search-type">
@@ -87,7 +113,7 @@ const Input = props => {
             authors ={book.authors}
         />
         ))}
-        </ul> 
+        </ul>
     </div>
     </>
   );
