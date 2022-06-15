@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import '../../css files/Item.css';
@@ -5,7 +6,14 @@ import Books from './Books';
 
 
 const Item = props => {
-  console.log(props)
+
+  async function bookData (){
+    axios.get('')
+    .then(res=>console.log(res.data))
+  }
+
+
+  // console.log(props)
   return (
     <>
     <li>
@@ -21,7 +29,8 @@ const Item = props => {
           {/* <Link to={'/book/description'}>
             <div className="description-button">상세보기</div>
             </Link> */}
-            <a href={props.url}>상세보기</a>
+            {/* <a href={props.url}>상세보기</a> */}
+            <div onClick={bookData}>상세보기</div>
         </dd>
       </dl>
     </li>
