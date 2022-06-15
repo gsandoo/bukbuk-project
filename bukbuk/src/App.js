@@ -19,7 +19,7 @@ function App() {
             <Route path={'/service'} component={Service}/>
             <Route path={'/write'} component={ServiceWrite}/>
             <Route path={'/oldbooks'} component={Oldbooks}/>
-            <Route path={'/book/description'} component={Books}/>
+            <Route path={'/book/description/'} component={Books}/>
          </Switch>
       </BrowserRouter>
    )

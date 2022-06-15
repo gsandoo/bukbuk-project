@@ -30,7 +30,7 @@ const Item = props => {
             <div className="description-button">상세보기</div>
             </Link> */}
             {/* <a href={props.url}>상세보기</a> */}
-            <div onClick={bookData}>상세보기</div>
+            <Link to={`/book/description?book_title=${props.title}`}><div>상세보기</div></Link>
         </dd>
       </dl>
     </li>
