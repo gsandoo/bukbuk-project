@@ -4,27 +4,22 @@ import Nav from "../navibar/Nav";
 import '../../css files/service.css'
 import {Link} from 'react-router-dom';
 import Menu from "../navibar/Menu";
-import ShowFaq from "./ShowFaq";
+import ShowFaq from './ShowFaq';
 
 function Service(){  
 
 
     // 입력 받은 값을 전체 고객센터 창에 띄우는 상태변경 useState
     const [viewContent , setViewContent] = useState ([])
-  
+    console.log("hello")
     
     useEffect(()=>{
-        
-        Axios.get(/*'' 안에 url 입력해주세요*/'')
+        Axios.get('http://localhost:8080/service')
         .then((response)=>{
           setViewContent(response.data);
-          console.log(response.data)
-            
-        }).catch(e=>console.log(e))
-        
+          console.log(response);
+        }).catch(console.log('에러'))
     },[])
-
-
 
 
     
@@ -49,5 +44,5 @@ function Service(){
     );
 };
 
-export default Service;
 
+export default Service;

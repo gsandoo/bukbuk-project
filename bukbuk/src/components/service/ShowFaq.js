@@ -4,7 +4,7 @@ import '../../css files/service-faq.css';
 function ShowFaq({faq}){
     return(
         <div className="faq-box flex">
-            {faq.map(content=>{
+            {faq.service&&faq.service.map(content=>{
                 return (
                 <div key ={content.service_category}>
                     <div className="faq-index">
