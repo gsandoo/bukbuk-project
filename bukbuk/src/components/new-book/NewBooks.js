@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { bookSearch} from "./api";
+import { bookSearch} from "../search-item/api";
 import "../../css files/Input.css";
-import Item from "./Item";
+import NewBookItem from "./NewBookItem";
+import Nav from "../navibar/Nav";
+import Menu from "../navibar/Menu";
 
-const Input = props => {
+const NewBooks = props => {
   const [books, setBooks] = useState([]);
   const [text, setText] = useState("");
   const [query, setQuery] = useState("");
@@ -46,7 +48,7 @@ const Input = props => {
   const bookSearchHttpHandler = async (query, reset) => {
     const params = {
       query: query,
-      sort: 'accuracy', // accuracy | recency 정확도 or 최신
+      sort: 'recency', // accuracy | recency 정확도 or 최신
       page: 1, // 페이지번호
       size: 20 // 한 페이지에 보여 질 문서의 개수
     };
@@ -54,7 +56,7 @@ const Input = props => {
     // 책의 정보
     const { data } = await bookSearch(params);
     if (reset) {
-      setBooks(data.documents); //책 정보.
+      setBooks(data.documents); //책 정보들이 콘솔창에 띄워짐.
     } else {
       setBooks(books.concat(data.documents));
     }
@@ -82,28 +84,12 @@ const Input = props => {
   
   return (
     <>
-    <div className="search-type">
-        <input 
-        type="search" 
-        name="query" 
-        placeholder="도서명 / isbn 검색" 
-        className="input-search"
-        onKeyDown={onEnter}
-        onChange={onTextUpdate}
-        value={text}
-        />
-    </div>
-    <div className="search-btn">
-        <button 
-        type="search"
-        onClick={onClick}>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxsZsjY46D3whfdkqeE3BvzAKy61374wBUGw&usqp=CAU" alt="search-btn" />
-        </button>
-    </div>
+    <Nav/>
+    <Menu/>
     <div>
         <ul className="item-box">
             {books.map((book, index) => (
-        <Item
+        <NewBookItem
             key={index}
             thumbnail={book.thumbnail}
             title={book.title}
@@ -118,4 +104,4 @@ const Input = props => {
     </>
   );
 };
-export default Input;
+export default NewBooks;

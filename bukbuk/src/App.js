@@ -8,6 +8,7 @@ import Home from './components/Home';
 import ServiceWrite from './components/service/ServiceWrite';
 import Oldbooks from './components/oldbook/Oldbooks';
 import Books from './components/search-item/Books';
+import NewBooks from './components/new-book/NewBooks';
 function App() {
    
    return(
@@ -20,6 +21,7 @@ function App() {
             <Route path={'/write'} component={ServiceWrite}/>
             <Route path={'/oldbooks'} component={Oldbooks}/>
             <Route path={'/book/description/'} component={Books}/>
+            <Route path={'/newbooks'} component={NewBooks}/>
          </Switch>
       </BrowserRouter>
    )
