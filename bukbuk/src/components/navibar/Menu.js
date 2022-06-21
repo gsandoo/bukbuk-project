@@ -4,9 +4,7 @@ import '../../css files/menu.css';
 
 
 
-
 function Menu(){
-    
     return(
         <div id="menubar"
         className="flex">

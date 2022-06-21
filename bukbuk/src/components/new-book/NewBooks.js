@@ -3,6 +3,7 @@ import Nav from "../navibar/Nav";
 import Menu from "../navibar/Menu";
 import NewBookItem from "./NewBookItem";
 import {bookSearch} from '../search-item/api';
+import Slide from "../slide/Slide";
 
 
 
@@ -50,6 +51,7 @@ function NewBooks(){
        <>
        <Nav/>
        <Menu/>
+       <Slide/>
        <div>
         <ul className="item-box">
             {books.map((book, index) => (

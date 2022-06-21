@@ -1,0 +1,41 @@
+#find-id{
+    text-align: center;
+    width: 30%;
+}
+.find-id-top{
+
+}
+.find-id-logo{
+
+}
+.find-id-logo > img{
+    width: 10vw;
+    border-radius: 100px;
+}
+.find-id-p{
+    font-size: 2.5em;
+}
+.find-id-input{
+    width: 100%;
+    height: 20vh;
+    margin-top: 7vh;
+}
+.find-id-input > input{
+    display: block;
+    text-align: center;
+    margin-left: 3vw;
+}
+.find-id-email{
+    width: 80%;
+    height: 5vh;
+    margin-bottom: 3vh;
+}
+.find-id-phone{
+    width: 80%;
+    height: 5vh;
+}
+.find-id-submit{
+    margin-top: 7vh;
+    width: 5vw;
+    height: 3vh;
+}
