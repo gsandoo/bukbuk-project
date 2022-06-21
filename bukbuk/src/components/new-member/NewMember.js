@@ -3,6 +3,7 @@ import Nav from '../navibar/Nav';
 import '../../css files/new-member-input.css';
 import Adress from './Adress';
 import '../../css files/font.css';
+import Menu from '../navibar/Menu';
 
 function LogIn(){
 
@@ -55,6 +56,7 @@ const handleButtonValid = () => {
   return (
     <>
     <Nav/>
+    <Menu/>
     <main className='signUp'>
       <form 
       className="signUpInput"
