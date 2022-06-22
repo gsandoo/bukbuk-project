@@ -3,22 +3,47 @@ import './App.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Login from './components/login/Login';
 import NewMember from './components/./new-member/NewMember';
+import MemberOut from './components/member-out/MemberOut';
 import Service from './components/service/Service';
-import Home from './components/Home';
+import Home from './components/Home/Home';
+
 import ServiceWrite from './components/service/ServiceWrite';
 import Oldbooks from './components/oldbook/Oldbooks';
 import Books from './components/search-item/Books';
-import NewBooks from './components/new-book/NewBooks';
+import NewBooks from './components/newbook/NewBooks';
 import Id from './components/find/Id';
 import Pw from './components/find/Pw';
-function App() {
+
+
+// import signIn from './components/logintest/auth';
+// import AuthRoute from './components/logintest/AuthRoute';
+// import Profile from './components/logintest/Profile';
+
+
+function App(authenticated) {
+   // const [user , setUser] = useState(null);
    
+   
+
+
+   // axios 로 접근하는 코드 짜야함
+   //로그인 / 로그아웃
+   // const login = ({email, password}) => setUser(signIn({email,password}));
+   // const  logout = ()=> setUser(null);
+
    return(
       <BrowserRouter>
          <Switch> 
             <Route path={'/'} exact component={Home} />
             <Route path={'/login'} component={Login}/>
-            <Route path={'/new-member'}component={NewMember}/>
+            
+      
+
+            {authenticated
+            ?<Route path={'/member-out'} component={MemberOut}/>
+            :<Route path={'/new-member'}component={NewMember}/>   
+            }
+
             <Route path={'/service'} component={Service}/>
             <Route path={'/write'} component={ServiceWrite}/>
             <Route path={'/oldbooks'} component={Oldbooks}/>
@@ -26,7 +51,6 @@ function App() {
             <Route path={'/newbooks'} component={NewBooks}/>
             <Route path={'/find/id'} component={Id}/>
             <Route path={'/find/pw'} component={Pw}/>
-
          </Switch>
       </BrowserRouter>
    )
