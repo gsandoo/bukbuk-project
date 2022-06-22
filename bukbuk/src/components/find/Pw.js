@@ -3,13 +3,34 @@ import Menu from "../navibar/Menu";
 import Nav from "../navibar/Nav";
 import axios from "axios";
 import '../../css files/pw-find.css'
+import Modal from "../modal/Modal";
 
 
 function Pw(){
+    
+    
     const [ input , setInput] = useState({
         email: "",
         name: "",
     });
+
+
+    // 데베에서 받아온 값 저장
+    const [ data , setData] = useState([]);
+
+
+// 모달창 상태변화
+
+const [modalOpen , setModalOpen] = useState(false);
+
+const openModal =()=>{
+    setModalOpen(true);
+}
+
+const closeModal = ()=>{
+    setModalOpen(false);
+}
+
 
 
     // input 값 할당
@@ -25,12 +46,12 @@ function Pw(){
     const {email , name} = input;
 
 
-
     // 이메일 유효성 검사
     const isValidEmail = email.includes('@') && email.includes('.');
-    const isValidName =  name.length >= 3;
+    const isValidName =  name.length >= 2;
 
 
+    const  getIsActive = isValidEmail && isValidName === true ;  
 
     let body ={
         email: email,
@@ -38,12 +59,13 @@ function Pw(){
     }
     const onSubmit= (e)=>{
         e.preventDefault();
-        if(!isValidEmail && !isValidName){
+        if(!getIsActive){
             alert('형식을 확인해주세요 !')
         }else{
-            console.log("success !")
+            console.log("success finding !")
             axios.post('',body)
-            .then(res=>console.log(res))
+            .then(res=>setData(res.data));
+            openModal();
         }
     }
     return(
@@ -62,21 +84,22 @@ function Pw(){
                 onSubmit={onSubmit}
             >
                 <input 
-                    placeholder="이메일" 
+                    placeholder="이메일을 입력해주세요" 
                     onChange={onChange}
                     name= "email"
                     className="find-pw-email"
                     type={'email'}
                 />
                 <input 
-                    placeholder="전화번호" 
+                    placeholder="성함을 입력해주세요" 
                     onChange={onChange}
-                    name= "phone"
-                    className="find-pw-phone"
-                    type={'phone'}
+                    name= "name"
+                    className="find-pw-name"
+                    type={'name'}
                 />
                 <button type="submit" className="find-pw-submit">확인</button>
             </form>
+            <Modal open ={modalOpen} close={closeModal} header="Modal Heading" data={data} comment={`자기님의 비밀번호는 ...`}/>  
         </main>
         </>
     );

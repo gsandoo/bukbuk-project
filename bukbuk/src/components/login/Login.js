@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import Nav from "../navibar/Nav";
 import Menu from '../navibar/Menu';
 import axios from "axios";
-import { Link, useHistory } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import '../../css files/login.css';
+import Home from "../Home/Home";
+import App from "../../App";
+
+
 
 
 function Login(){
@@ -12,6 +16,10 @@ function Login(){
             password: ""
         });
 
+        const [users,setUsers] = useState(null);
+
+        //보안 인증
+        const authenticated = users != null;
 
 
 
@@ -44,8 +52,7 @@ function Login(){
          };
 
 
-         let history = useHistory();
-
+        
 
 
          // 제출
@@ -54,9 +61,13 @@ function Login(){
             console.log("id :" + id)
             console.log("pw :" + password)
             axios.post("" , body)
-            .then(res=> console.log(res))
-            history.push("/")
+            .then(res=> 
+               setUsers(res.data)
+                )
             .catch(e=> console.log(e))
+            if(users)
+            {return <Home authenticated={authenticated}/>};
+            return <App authenticated={authenticated}/>;      
         }
             
         const ALert =(e)=>{
@@ -66,6 +77,9 @@ function Login(){
             }
         } 
         
+
+        const { from } = window.location.pathname || { from: { pathname: "/" } };
+        if (authenticated) return <Redirect to={from} />; //from 으로 이동
 
     return(
         <>
@@ -84,7 +98,10 @@ function Login(){
                             <input placeholder="아이디" type="id" name="id" onChange={onChange} className="id-input"/>
                             <input placeholder="비밀번호" type={'password'} name="password" onChange={onChange} className="pw-input"/>
                         </div>
+
+                        {/* 로그인 버튼 */}
                         <button type="submit" className={getIsActive ?'green' :'gray'} onClick={ALert}>로그인</button>
+                        
                         <div className="find">
                             <Link to={'/find/id'} className='id-find'>아이디 찾기</Link>
                             <Link to={'find/pw'}>비밀번호 찾기</Link>
@@ -100,4 +117,3 @@ function Login(){
 };
 
 export default Login;
-

@@ -10,7 +10,7 @@ import Home from './components/Home/Home';
 import ServiceWrite from './components/service/ServiceWrite';
 import Oldbooks from './components/oldbook/Oldbooks';
 import Books from './components/search-item/Books';
-import NewBooks from './components/newbook/NewBooks';
+import NewBooks from './components/new-book/NewBooks';
 import Id from './components/find/Id';
 import Pw from './components/find/Pw';
 
