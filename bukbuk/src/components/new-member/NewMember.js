@@ -1,23 +1,27 @@
-import React,{useState} from 'react';
+import React,{useState } from 'react';
 import Nav from '../navibar/Nav';
 import '../../css files/new-member-input.css';
 import Adress from './Adress';
 import '../../css files/font.css';
 import Menu from '../navibar/Menu';
+import axios from 'axios';
+import {useHistory} from 'react-router-dom';
+function NewMember(){
 
-function LogIn(){
+  const [ data ,setData] = useState(null)
+
 
   const [inputValue, setInputValue] = useState({
-    userName: '',
-    email: '',
-    password: '',
-    phoneNumber: '',
-    address: '',
+    mem_name: '',
+    mem_id: '',
+    mem_pwd: '',
+    mem_phone: '',
+    mem_addr: '',
   });
 
   const [checkBoxActive, setCheckBoxActive] = useState(false);
 
-  const { userName, email, password, phoneNumber, address } = inputValue;
+  const { mem_name, mem_id, mem_pwd, mem_phone, mem_addr } = inputValue;
   
   const handleInput = event => {
     const { name, value } = event.target;
@@ -25,14 +29,15 @@ function LogIn(){
       ...inputValue, 
       [name]: value,
     });
+    console.log(`${name} 의 값은 ${value} 입니다`)
   };
 
   // 모든 input의 value가 1자 이상이 되어야 한다
-const isValidEmail = email.includes('@') && email.includes('.');
-const specialLetter = password.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
-const isValidPassword = password.length >= 8 && specialLetter >= 1;
-const isValidPhone = phoneNumber.includes('-') && phoneNumber.length >= 13;
-const isValidInput = userName.length >= 1 && phoneNumber.length >= 1 && address.length >= 1;
+const isValidEmail = mem_id.includes('@') && mem_id.includes('.');
+const specialLetter = mem_pwd.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+const isValidPassword = mem_pwd.length >= 8 && specialLetter >= 1;
+const isValidPhone = mem_phone.includes('-') && mem_phone.length >= 13;
+const isValidInput = mem_name.length >= 1 && mem_phone.length >= 1 && mem_addr.length >= 1;
 const isCheckBoxClicked = () => {
     setCheckBoxActive(!checkBoxActive);
     console.log(checkBoxActive);
@@ -42,14 +47,42 @@ const isCheckBoxClicked = () => {
 const getIsActive = 
    isValidEmail && isValidPassword && isValidInput && checkBoxActive && isValidPhone === true;
 
+
+let body = {
+  mem_name : mem_name,
+  mem_pwd : mem_pwd,
+  mem_addr : mem_addr,
+  mem_phone: mem_phone,
+  mem_id: mem_id,
+}
+
+const history = useHistory();
+
 // 유효성 검사 중 하나라도 만족하지못할때 즉, 버튼이 비활성화 될 때 버튼을 클릭하면 아래와 같은 경고창이 뜬다.
-const handleButtonValid = () => {
+const handleButtonValid = (e) => {
+  e.preventDefault();
  if (!isValidInput){alert('칸을 다 채워주세요')}
  else if(!isValidEmail){alert('이메일 형식에 맞게 써주세요')}
  else if(!isValidPassword ){alert('비밀번호는 8자리 이상과 특수문자를 1개이상 포함 해주세요')}
  else if(!isValidPhone){alert('전화번호는 "-" 와 11자리 이상, 숫자로만 작성 해주세요')}
  else if(!checkBoxActive){alert('체크박스를 클릭 해주세요')}
- else{console.log('success')};
+ else{
+  console.log('success')
+  axios.post('http://localhost:8080/sign', null ,  {params:{
+                                            mem_name : mem_name,
+                                            mem_pwd : mem_pwd,
+                                            mem_addr : mem_addr,
+                                            mem_phone: mem_phone,
+                                            mem_id: mem_id,}
+                                          } )
+  .then(res=>
+    setData(res.data)
+  )
+  .catch(alert("회원가입이 정상적으로 이루어지지 않았습니다"))
+   if({data}===1){alert("회원가입이 완료되었습니다") ;
+   history.push("/login")
+   }
+};
 }
   // jsx코드
   
@@ -60,13 +93,13 @@ const handleButtonValid = () => {
     <main className='signUp'>
       <form 
       className="signUpInput"
-      action=''//은채 데베
-      method='POST' >
+      onSubmit={handleButtonValid}
+      >
             <div className="nameInput">
               <div className="inputMessage">이름 *</div>
               <input
                 className='input'
-                name="userName"
+                name="mem_name"
                 onChange={handleInput}
               />
             </div>
@@ -74,7 +107,7 @@ const handleButtonValid = () => {
               <div className="inputMessage">이메일(ID) *</div>
               <input
               className='input'
-                name="email"
+                name="mem_id"
                 onChange={handleInput}
               />
             </div>
@@ -83,7 +116,7 @@ const handleButtonValid = () => {
               <input
               className='input'
                 type="password"
-                name="password"
+                name="mem_pwd"
                 onChange={handleInput}
               />
             </div>
@@ -91,7 +124,7 @@ const handleButtonValid = () => {
               <div className="inputMessage">전화번호 *</div>
               <input
               className='input'
-                name="phoneNumber"
+                name="mem_phone"
                 onChange={handleInput}
               />
             </div>
@@ -119,7 +152,7 @@ const handleButtonValid = () => {
                 <input
                 type='text'
                 className='input specific-address'
-                name="address"
+                name="mem_addr"
                 onChange={handleInput}
                 placeholder='상세주소'
                 />
@@ -151,8 +184,8 @@ const handleButtonValid = () => {
                 className={
                   getIsActive ? 'signUpButtonAction' : 'signUpButtonInaction'
                 }
-                type="button"
-                onClick={handleButtonValid}
+                type="submit"
+                
               >
                 BUKBUK의 회원되기
               </button>
@@ -165,5 +198,4 @@ const handleButtonValid = () => {
   }
 
 
-export default LogIn;
-
+export default NewMember;

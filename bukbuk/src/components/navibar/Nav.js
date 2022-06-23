@@ -32,7 +32,7 @@ function Nav(authenticated){
 
                 {!authenticated
                 ?<div className="new-member">
-                    <Link to={'/member-out'}> <div className="new-member-btn">회원탈퇴</div></Link>
+                    <Link to={'/mypage'}> <div className="new-member-btn">내 정보 수정</div></Link>
                 </div>   
                 :<div className="new-member">
                    <Link to={'/new-member'}> <div className="new-member-btn">회원가입</div></Link>

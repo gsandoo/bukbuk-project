@@ -3,14 +3,14 @@ import './App.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Login from './components/login/Login';
 import NewMember from './components/./new-member/NewMember';
-import MemberOut from './components/member-out/MemberOut';
+import MyPage from './components/mypage/MyPage';
 import Service from './components/service/Service';
 import Home from './components/Home/Home';
 
 import ServiceWrite from './components/service/ServiceWrite';
 import Oldbooks from './components/oldbook/Oldbooks';
 import Books from './components/search-item/Books';
-import NewBooks from './components/new-book/NewBooks';
+import NewBooks from './components/newbook/NewBooks';
 import Id from './components/find/Id';
 import Pw from './components/find/Pw';
 
@@ -35,15 +35,21 @@ function App(authenticated) {
       <BrowserRouter>
          <Switch> 
             <Route path={'/'} exact component={Home} />
-            <Route path={'/login'} component={Login}/>
+            {/* <Route path={'/login'} component={Login}/> */}
+            <Route
+            path="/login"
+            render={props => (
+              <Login authenticated={authenticated} {...props} />
+            )}
+          />
             
       
 
-            {authenticated
-            ?<Route path={'/member-out'} component={MemberOut}/>
-            :<Route path={'/new-member'}component={NewMember}/>   
-            }
-
+            {/* {authenticated
+            ?<Route path={'/mypage'} component={MyPage}/>
+            :  
+            } */}
+            <Route path={'/new-member'}component={NewMember}/> 
             <Route path={'/service'} component={Service}/>
             <Route path={'/write'} component={ServiceWrite}/>
             <Route path={'/oldbooks'} component={Oldbooks}/>
