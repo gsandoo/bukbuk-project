@@ -1,5 +1,5 @@
 import React, {useEffect , useState} from "react";
-import Nav from "../navibar/Nav";
+
 import Menu from "../navibar/Menu";
 import NewBookItem from "./NewBookItem";
 import {bookSearch} from '../search-item/api';
@@ -49,7 +49,7 @@ function NewBooks(){
 
     return(
        <>
-       <Nav/>
+      
        <Menu/>
        <Slide/>
        <div>
@@ -72,4 +72,3 @@ function NewBooks(){
 };
 
 export default NewBooks;
-

@@ -10,6 +10,9 @@ function ShowFaq({faq}){
                     <div className="faq-index">
                         {content.service_category}
                     </div>
+                    <div className="faq-id">
+                        {content.service_id}
+                    </div>
                     <div className="faq-title">
                         {content.service_title}
                     </div>

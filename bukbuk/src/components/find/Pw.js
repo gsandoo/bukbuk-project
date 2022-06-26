@@ -1,6 +1,6 @@
 import React , {useState} from "react";
 import Menu from "../navibar/Menu";
-import Nav from "../navibar/Nav";
+
 import axios from "axios";
 import '../../css files/pw-find.css'
 import Modal from "../modal/Modal";
@@ -48,7 +48,7 @@ const closeModal = ()=>{
 
     // 이메일 유효성 검사
     const isValidEmail = email.includes('@') && email.includes('.');
-    const isValidName =  name.length >= 2;
+    const isValidName =  name.length <= 2;
 
 
     const  getIsActive = isValidEmail && isValidName === true ;  
@@ -70,7 +70,7 @@ const closeModal = ()=>{
     }
     return(
         <>
-        <Nav/>
+     
         <Menu/>
         <main id="find-pw">
             <div className="find-pw-top">
@@ -93,7 +93,7 @@ const closeModal = ()=>{
                 <input 
                     placeholder="성함을 입력해주세요" 
                     onChange={onChange}
-                    name= "name"
+                    name= "phone"
                     className="find-pw-name"
                     type={'name'}
                 />

@@ -1,29 +1,17 @@
 import React, { useState } from "react";
-import Nav from "../navibar/Nav";
 import Menu from '../navibar/Menu';
-import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import '../../css files/login.css';
-import Home from "../Home/Home";
-import App from "../../App";
+import ServiceWrite from "../service/ServiceWrite";
 
 
 
 
-function Login({location}){
+function Login({authenticated, login, location}){
         const [inputValue , setInputValue] = useState({
             id: "",
             password: ""
         });
-
-        const [users,setUsers] = useState(null);
-
-
-        //보안 인증
-        const authenticated = users != null ;
-        console.log(authenticated)
-        
-
 
 
         const {id , password } = inputValue;
@@ -47,75 +35,26 @@ function Login({location}){
           const getIsActive = isValidId && isValidPassword  === true;
 
 
-         
-        let body = {
-
-            id : id,
-            password: password
-
-         };
-
+         const handleSubmit = ()=>{
+            try{
+                login({id , password})
+            }
+            catch (e){
+                alert("로그인에 실패하였습니다.")
+                setInputValue(" ")
+            }
+            return <ServiceWrite id ={id}/>
+         } 
+    
 
         
          const { from } = location.state || { from: { pathname: "/" } };
-         console.log(from)
+         if (authenticated) return <Redirect to={from} />;
 
-         // 제출
-         const handleSubmit =async()=>{
-            
-            // console.log("id :" + id)
-            // console.log("pw :" + password)
-            // setUsers(id);
-            // console.log(users)
-            // console.log(authenticated)
-            await axios.get("https://jsonplaceholder.typicode.com/users" )
-            .then(res=> 
-                setUsers(res.data)
-            ).catch(e=>alert("hi" +e ))
-            console.log("지금은" + authenticated)
-            if(users)
-            {   
-                <>  
-                    <Home authenticated={authenticated}/>  
-                    <App authenticated={authenticated}/> 
-                </>
-            }      
-            console.log("이동하겠습니다 !")
-            if(authenticated===true){
-                return <Redirect to={from}/>   
-            }
-            else{
-                return
-            }
-            
-        }
 
-        // const onClick = async(e)=>{
-        //     e.preventDefault();
-        //     await axios.get("https://jsonplaceholder.typicode.com/users" )
-        //     .then(res=> 
-        //         setUsers(res.data)
-        //         )
-        //     console.log("지금은" + authenticated)
-            
-        // }
-            
-        // const ALert =(e)=>{
-        //     e.preventDefault();
-        //     if(!getIsActive){
-        //         alert("아이디와 비밀번호를 알맞게 기입해 주세요")
-        //     }
-        // } 
-        
-
-        
-        
-        // if (authenticated) {return <Redirect to={from}/>} //from 으로 이동
-        
-
+         
     return(
         <>
-            <Nav/>
             <Menu/>
             <main id="login-box">
                 <div className="top">
@@ -125,7 +64,7 @@ function Login({location}){
                     <p>Hello , Welcome to BUKBUK ! </p>
                 </div>
                 <div className="login-input">
-                    <form className="login-form" onSubmit={handleSubmit}>
+                    <form className="login-form" >
                         
                         <div className="id-pw">
                             <input placeholder="아이디" type="id" name="id" onChange={onChange} className="id-input"/>

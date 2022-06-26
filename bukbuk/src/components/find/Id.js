@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Menu from "../navibar/Menu";
-import Nav from "../navibar/Nav";
+
 import axios from "axios";
 import '../../css files/id-find.css';
 import Modal from "../modal/Modal";
@@ -70,7 +70,6 @@ function Id(){
     }
     return(
         <>
-        <Nav/>
         <Menu/>
         <main id="find-id">
             <div className="find-id-top">

@@ -1,5 +1,5 @@
 import React, {useState ,  useEffect } from "react";
-import Nav from "../navibar/Nav";
+
 import Menu from "../navibar/Menu";
 import '../../css files/book-description.css'
 import axios from "axios";
@@ -15,10 +15,6 @@ const [text , setText] = useState([])
     console.log(bookTitle)
 
 
-//    useEffect(async()=>{
-//    await axios.post('http://localhost:8080/book',{
-//    book_title:`${url.get('book_title')}`
-//    }),[] })
 
 
 
@@ -26,10 +22,10 @@ const [text , setText] = useState([])
     useEffect(()=>{axios.get('http://localhost:8080/book', {params:{book_title: bookTitle}} )
         .then(res=>setText(res.data.review))
         .catch(console.log("에러"))
-    },[])
+    },[bookTitle])
     return(
         <div>
-           <Nav/>
+         
            <Menu/> 
            <div id="description-main">
                 <div className="book-title">{url.get('book_title')}

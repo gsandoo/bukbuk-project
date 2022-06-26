@@ -1,12 +1,11 @@
 import React,{useState } from 'react';
-import Nav from '../navibar/Nav';
 import '../../css files/new-member-input.css';
 import Adress from './Adress';
 import '../../css files/font.css';
 import Menu from '../navibar/Menu';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
-function NewMember(){
+function LogIn(){
 
   const [ data ,setData] = useState(null)
 
@@ -48,13 +47,13 @@ const getIsActive =
    isValidEmail && isValidPassword && isValidInput && checkBoxActive && isValidPhone === true;
 
 
-let body = {
-  mem_name : mem_name,
-  mem_pwd : mem_pwd,
-  mem_addr : mem_addr,
-  mem_phone: mem_phone,
-  mem_id: mem_id,
-}
+// let body = {params:{
+//   mem_name : mem_name,
+//   mem_pwd : mem_pwd,
+//   mem_addr : mem_addr,
+//   mem_phone: mem_phone,
+//   mem_id: mem_id,
+// }}
 
 const history = useHistory();
 
@@ -88,7 +87,6 @@ const handleButtonValid = (e) => {
   
   return (
     <>
-    <Nav/>
     <Menu/>
     <main className='signUp'>
       <form 
@@ -198,4 +196,4 @@ const handleButtonValid = (e) => {
   }
 
 
-export default NewMember;
+export default LogIn;

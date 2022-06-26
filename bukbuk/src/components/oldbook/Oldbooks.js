@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MapContainer from './MapContainer';
 import '../../css files/oldbook.css';
-import Nav from '../navibar/Nav';
+
 import Menu from '../navibar/Menu';
 
 function Oldbooks() {
@@ -20,7 +20,7 @@ function Oldbooks() {
 
   return (
       <>
-    <Nav/>
+
     <Menu/>
     <div id='oldbook'>
       <form className="inputForm" onSubmit={handleSubmit}>
@@ -40,7 +40,3 @@ function Oldbooks() {
 }
 
 export default Oldbooks;
-
-
-
-

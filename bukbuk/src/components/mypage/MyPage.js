@@ -1,20 +1,34 @@
 import React from "react";
-import Nav from "../navibar/Nav";
 import Menu from "../navibar/Menu";
 
 function MyPage(){
     return(
         <>
-            <Nav/>
             <Menu/>
             <div>
                 <form>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
+                    <div>
+                        <div>아이디</div>
+                        <input/>
+                    </div>
+                    <div>
+                        <div>이메일(id)</div>
+                        <input/>
+                    </div>
+                    <div>
+                        <div>비밀번호</div>
+                        <input/>
+                    </div>
+                    <div>
+                        <div>아이디</div>
+                        <input/>
+                    </div>
+                    <div>
+                        <div>아이디</div>
+                        <input/>
+                    </div>
+                    
+                    <button></button>
                 </form>
             </div>
         </>
